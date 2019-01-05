@@ -1,15 +1,19 @@
 Every object has prototype property.
 Inheritance in js is possible because of this.
-   Instead of writing a function/property that is common to all objects each time, we can do it by writing it once for
-   parent object as prototype. So when we try to fetch a property/function, if it is not available in the object you are
-   looking, it searches in the parent object prototype, it loops the same till it reaches the Object prototype.
-   [this is called prototype chain]
 
-Because of this prototype property, we are able to use the "hasownproperty" methods in all objects, because it is present in the object
-prototype.
+Using function constructor if we create objects, It will create copies for each object. It is just wastage of memory.
 
-We can created function and variable in prototype by two methods,
-1.
+If we use prototype, it will not copies, but just share the property and methods of the object with others
+
+prototype chain:
+When we fetch a property or method from a object, it will display if it is present, else it will search from the prototype shared
+from parent, and the chain goes on till it find the value.
+e.g:
+Because of this prototype chain, we are able to use the "hasownproperty" methods in all objects, because it is present in the object
+prototype(parent of all objects).
+
+We can create function and variable in prototype by two methods,
+1. constructor method and assign prototype
 person.prototype.functionName = function(){
 };
 
