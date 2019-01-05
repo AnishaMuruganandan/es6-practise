@@ -1,0 +1,27 @@
+Every object has prototype property.
+Inheritance in js is possible because of this.
+   Instead of writing a function/property that is common to all objects each time, we can do it by writing it once for
+   parent object as prototype. So when we try to fetch a property/function, if it is not available in the object you are
+   looking, it searches in the parent object prototype, it loops the same till it reaches the Object prototype.
+   [this is called prototype chain]
+
+Because of this prototype property, we are able to use the "hasownproperty" methods in all objects, because it is present in the object
+prototype.
+
+We can created function and variable in prototype by two methods,
+1.
+person.prototype.functionName = function(){
+};
+
+person.prototype.varName='';
+
+2. object.create(prototypeName)
+
+Because of this object.create method, we can specify, which prototype an object should use.
+
+var newobj = object.create(prototype)
+
+we can create the object with this method by specifying it as second property
+var newobj = object.create(prototype, {
+name : {value:'ad'}
+})
